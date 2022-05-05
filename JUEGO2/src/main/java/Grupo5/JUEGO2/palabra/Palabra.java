@@ -1,7 +1,6 @@
 package Grupo5.JUEGO2.palabra;
 
-import java.awt.BorderLayout;
-import java.awt.EventQueue;
+
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -10,42 +9,39 @@ import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 import javax.swing.ImageIcon;
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
 import java.awt.Font;
 
-public class palabra extends JFrame {
+public class Palabra extends JFrame {
 
+	
+	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 	private JTextField textField;
 	private JTextField textField_1;
-
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					palabra frame = new palabra();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
-
-	/**
-	 * Create the frame.
-	 */
-	public palabra() {
+	
+	public ImageIcon image1;
+	public ImageIcon image2;
+	public ImageIcon image3;
+	public ImageIcon image4;
+	public ImageIcon image5;
+	public ImageIcon image6;
+	public ImageIcon image7;
+	public ImageIcon image8;
+	public ImageIcon image9;
+	public ImageIcon image10;
+	private  JLabel Newlabel1;
+	
+	
+	
+	
+	public Palabra() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 550, 600);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
+		setVisible(true);
 		
 		JButton Button_inicio = new JButton("Iniciar juego");
 		Button_inicio.setBounds(50, 50, 200, 50);
@@ -226,7 +222,12 @@ public class palabra extends JFrame {
 		btnNewButton_2_4.setIcon(new ImageIcon("C:\\Users\\iplan\\Desktop\\Untitled.png"));
 		contentPane.add(btnNewButton_2_4);
 		
+		 Newlabel1 = new JLabel();
+		 Newlabel1.setBounds(30, 198, 36, 35);
+		image1 = new ImageIcon("/JUEGO2/imagenes/imagenes/0.png");
+        Newlabel1.setIcon(image1);
+        contentPane.add(Newlabel1);
 
-
+     
 	}
 }
