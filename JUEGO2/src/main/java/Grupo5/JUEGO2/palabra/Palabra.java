@@ -21,6 +21,12 @@ public class Palabra extends JFrame {
 	private JTextField textField;
 	private JTextField textField_1;
 	
+	
+	private JButton A, B, C, D, E, G, H, I, J, F, K, L, M, N, Ñ, O, P, Q, R, S, T, U, V, W, X, Y, Z;
+	 
+	//variable que controla el número de intentos que tiene el usuario 
+	private int numeroIntentos = 10;
+	
 	// arrayList para agrupar los botones
 	private ArrayList<JButton> botonesTeclado = new ArrayList<JButton>();
 
@@ -32,6 +38,8 @@ public class Palabra extends JFrame {
 					frame.setVisible(true);
 					// al entrar, desabilitamos los botones
 					frame.habilitarODeshabilitar(false);
+					
+					frame.agregarListenersBotones();
 					
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -74,165 +82,165 @@ public class Palabra extends JFrame {
 		lblNewLabel_1.setBounds(0, 0, 0, 0);
 		contentPane.add(lblNewLabel_1);
 
-		JButton A = new JButton("A");
+		A = new JButton("A");
 		A.setBounds(10, 347, 43, 23);
 		// añadimos el botón al arraylist
 		botonesTeclado.add(A);
 		contentPane.add(A);
 
-		JButton B = new JButton("B");
+		B = new JButton("B");
 		B.setBounds(63, 347, 43, 23);
 		// añadimos el botón al arraylist
 		botonesTeclado.add(B);
 		contentPane.add(B);
 
-		JButton C = new JButton("C");
+		C = new JButton("C");
 		C.setBounds(116, 347, 43, 23);
 		// añadimos el botón al arraylist
 		botonesTeclado.add(C);
 		contentPane.add(C);
 
-		JButton D = new JButton("D");
+		D = new JButton("D");
 		D.setBounds(169, 347, 43, 23);
 		// añadimos el botón al arraylist
 		botonesTeclado.add(D);
 		contentPane.add(D);
 
-		JButton E = new JButton("E");
+		E = new JButton("E");
 		E.setBounds(222, 347, 43, 23);
 		// añadimos el botón al arraylist
 		botonesTeclado.add(E);
 		contentPane.add(E);
 
-		JButton G = new JButton("G");
+		G = new JButton("G");
 		G.setBounds(63, 379, 43, 23);
 		// añadimos el botón al arraylist
 		botonesTeclado.add(G);
 		contentPane.add(G);
 
-		JButton H = new JButton("H");
+		H = new JButton("H");
 		H.setBounds(116, 379, 43, 23);
 		// añadimos el botón al arraylist
 		botonesTeclado.add(H);
 		contentPane.add(H);
 
-		JButton I = new JButton("I");
+		I = new JButton("I");
 		I.setBounds(169, 379, 43, 23);
 		// añadimos el botón al arraylist
 		botonesTeclado.add(I);
 		contentPane.add(I);
 
-		JButton J = new JButton("J");
+		J = new JButton("J");
 		J.setBounds(222, 381, 43, 23);
 		// añadimos el botón al arraylist
 		botonesTeclado.add(J);
 		contentPane.add(J);
 
-		JButton F = new JButton("F");
+		F = new JButton("F");
 		F.setBounds(10, 379, 43, 23);
 		// añadimos el botón al arraylist
 		botonesTeclado.add(F);
 		contentPane.add(F);
 
-		JButton K = new JButton("K");	
+		K = new JButton("K");	
 		K.setBounds(10, 413, 43, 23);
 		// añadimos el botón al arraylist
 		botonesTeclado.add(K);
 		contentPane.add(K);
 
-		JButton L = new JButton("L");
+		L = new JButton("L");
 		L.setBounds(63, 413, 43, 23);
 		// añadimos el botón al arraylist
 		botonesTeclado.add(L);
 		contentPane.add(L);
 
-		JButton M = new JButton("M");
+		M = new JButton("M");
 		M.setFont(new Font("Tahoma", Font.PLAIN, 10));
 		// añadimos el botón al arraylist
 		botonesTeclado.add(M);
 		M.setBounds(116, 413, 43, 23);
 		contentPane.add(M);
 
-		JButton N = new JButton("N");
+		N = new JButton("N");
 		N.setBounds(169, 413, 43, 23);
 		// añadimos el botón al arraylist
 		botonesTeclado.add(N);
 		contentPane.add(N);
 
-		JButton Ñ = new JButton("Ñ");
+		Ñ = new JButton("Ñ");
 		Ñ.setBounds(222, 415, 43, 23);
 		// añadimos el botón al arraylist
 		botonesTeclado.add(Ñ);
 		contentPane.add(Ñ);
 
-		JButton O = new JButton("O");
+		O = new JButton("O");
 		O.setBounds(10, 447, 43, 23);
 		// añadimos el botón al arraylist
 		botonesTeclado.add(O);
 		contentPane.add(O);
 
-		JButton P = new JButton("P");
+		P = new JButton("P");
 		P.setBounds(63, 447, 43, 23);
 		// añadimos el botón al arraylist
 		botonesTeclado.add(P);
 		contentPane.add(P);
 
-		JButton Q = new JButton("Q");
+		Q = new JButton("Q");
 		Q.setBounds(116, 447, 43, 23);
 		// añadimos el botón al arraylist
 		botonesTeclado.add(Q);
 		contentPane.add(Q);
 
-		JButton R = new JButton("R");
+		R = new JButton("R");
 		R.setBounds(169, 447, 43, 23);
 		// añadimos el botón al arraylist
 		botonesTeclado.add(R);
 		contentPane.add(R);
 
-		JButton S = new JButton("S");
+		S = new JButton("S");
 		S.setBounds(222, 447, 43, 23);
 		// añadimos el botón al arraylist
 		botonesTeclado.add(S);
 		contentPane.add(S);
 
-		JButton T = new JButton("T");
+		T = new JButton("T");
 		T.setBounds(10, 481, 43, 23);
 		// añadimos el botón al arraylist
 		botonesTeclado.add(T);
 		contentPane.add(T);
 
-		JButton U = new JButton("U");
+		U = new JButton("U");
 		U.setBounds(63, 481, 43, 23);
 		// añadimos el botón al arraylist
 		botonesTeclado.add(U);
 		contentPane.add(U);
 
-		JButton V = new JButton("V");
+		V = new JButton("V");
 		V.setBounds(116, 481, 43, 23);
 		// añadimos el botón al arraylist
 		botonesTeclado.add(V);
 		contentPane.add(V);
 
-		JButton W = new JButton("W");
+		W = new JButton("W");
 		W.setFont(new Font("Tahoma", Font.PLAIN, 9));
 		// añadimos el botón al arraylist
 		botonesTeclado.add(W);
 		W.setBounds(169, 481, 43, 23);
 		contentPane.add(W);
 
-		JButton X = new JButton("X");
+		X = new JButton("X");
 		X.setBounds(222, 481, 43, 23);
 		// añadimos el botón al arraylist
 		botonesTeclado.add(X);
 		contentPane.add(X);
 
-		JButton Y = new JButton("Y");
+		Y = new JButton("Y");
 		Y.setBounds(10, 515, 43, 23);
 		// añadimos el botón al arraylist
 		botonesTeclado.add(Y);
 		contentPane.add(Y);
 
-		JButton Z = new JButton("Z");
+		Z = new JButton("Z");
 		Z.setBounds(63, 515, 43, 23);
 		// añadimos el botón al arraylist
 		botonesTeclado.add(Z);
@@ -289,7 +297,7 @@ public class Palabra extends JFrame {
 			}
 
 		});
-
+		
 	}
 	
 	// deshabilitamos o habilitamos los botones según la opción pasada como parámetro
@@ -299,5 +307,46 @@ public class Palabra extends JFrame {
 				
 			}
 	}
+	
+	// función que agrega a cada boton del array botonesTeclado el addActionListener que deshabilita el boton clickado
+	public void agregarListenersBotones() {
+		
+		for (int i = 0; i < botonesTeclado.size(); i++) {
+			
+			final int indxBtn = i;
+			
+			botonesTeclado.get(i).addActionListener(new ActionListener() {
+				@Override
+				public void actionPerformed(ActionEvent e) {
+					botonesTeclado.get(indxBtn).setEnabled(false);
+					
+					// ** PENDIENTE FUNCIÓN que comprueba:
+						// si se ha acertado mostrar letras en el panel 
+						// si se ha fallado añadir imagen ahorcado 
+					
+					//logica();
+					
+				}
+			});
+		}
+	}
+// TODO:
+//	public void logica() {
+//		if (siHaAcertado()) {
+//			abrirLetrasPalabraSecreta();
+//		} else {
+//			siQuedanIntentosRestantes();
+//			añadirSiguienteImagenAhorcado();
+//		}
+//	}
+//	
+//	public void siQuedanIntentosRestantes() {
+//		if (numeroIntentos == 0) {
+//			System.out.println("No tienes mas intentos. Vuelve a jugar.");
+//			System.out.println("Reiniciamos el programa, funcion reiniciarJuego() ");
+//		} else {
+//			numeroIntentos--;
+//		}
+//	}
 
 }
