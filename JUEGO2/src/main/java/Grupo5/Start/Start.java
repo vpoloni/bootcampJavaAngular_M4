@@ -142,7 +142,11 @@ public  class Start extends JFrame implements ActionListener {
 		 
 			   if (e.getSource() == principiante ) {
 				 new Palabra();
-				 setVisible(false);
+				 Palabra palabra = new Palabra();
+				palabra.habilitarODeshabilitar(false);
+				palabra.agregarListenersBotones();
+				palabra.añadir(palabra.palabrasSecretas());
+				setVisible(false);
 				
 			   }
 			   if (e.getSource() == intermedio) {
