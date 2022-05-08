@@ -1,4 +1,4 @@
-package Grupo5.Start;
+package Grupo5.inicioPrograma;
 
 import java.awt.BorderLayout;
 import java.awt.event.ActionEvent;
@@ -13,9 +13,9 @@ import javax.swing.JPanel;
 import javax.swing.border.Border;
 import javax.swing.border.EmptyBorder;
 
-import Grupo5.JUEGO2.palabra.Palabra;
+import Grupo5.palabraSecreta.PalabraSecreta;
 
-public class Start extends JFrame implements ActionListener {
+public class InicioPrograma extends JFrame implements ActionListener {
 
 	private static final long serialVersionUID = 1L;
 
@@ -38,7 +38,7 @@ public class Start extends JFrame implements ActionListener {
 	final JButton intermedio;
 	final JButton experto;
 
-	public Start() {
+	public InicioPrograma() {
 
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(800, 500, 800, 500);
@@ -133,7 +133,7 @@ public class Start extends JFrame implements ActionListener {
 		}
 
 		if (e.getSource() == principiante) {
-			 Palabra palabra = new Palabra();
+			 PalabraSecreta palabra = new PalabraSecreta();
 			palabra.habilitarODeshabilitar(false);
 			palabra.agregarListenersBotones();
 			palabra.añadir(palabra.palabrasSecretas());
@@ -142,12 +142,12 @@ public class Start extends JFrame implements ActionListener {
 
 		}
 		if (e.getSource() == intermedio) {
-			new Palabra();
+			new PalabraSecreta();
 			setVisible(false);
 		}
 
 		if (e.getSource() == experto) {
-			new Palabra();
+			new PalabraSecreta();
 			setVisible(false);
 
 		}

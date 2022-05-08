@@ -1,4 +1,4 @@
-package Grupo5.JUEGO2.palabra;
+package Grupo5.palabraSecreta;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import java.util.Stack;
 import java.awt.event.ActionEvent;
 
-public class Palabra extends JFrame {
+public class PalabraSecreta extends JFrame {
 
 	private static final long serialVersionUID = 1L;
 
@@ -36,7 +36,7 @@ public class Palabra extends JFrame {
 	private JLabel LabelContador;
 	private JLabel lblNewLabel_6;
 
-	public Palabra() {
+	public PalabraSecreta() {
 
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 550, 600);
@@ -108,31 +108,78 @@ public class Palabra extends JFrame {
 		lblNewLabel_4.setBounds(10, 264, 96, 14);
 		contentPane.add(lblNewLabel_4);
 
-		JButton btnNewButton_2 = new JButton("");
+		final JButton btnNewButton_2 = new JButton("");
 		btnNewButton_2.setBounds(10, 198, 36, 35);
-		btnNewButton_2.setIcon(new ImageIcon(Palabra.class.getResource("/Grupo5/img/Untitled.png")));
+		btnNewButton_2.setIcon(new ImageIcon(PalabraSecreta.class.getResource("/Grupo5/img/Untitled.png")));
 		contentPane.add(btnNewButton_2);
+		btnNewButton_2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				btnNewButton_2.setVisible(false);
+				LabelPSecreta.setText(String.valueOf(letras_palabra));
+				if (!letras_palabra.contains('_')) {
+					btnNext.setVisible(true);
+				}
+			}
+		});
 
-		JButton btnNewButton_2_1 = new JButton("");
+		final JButton btnNewButton_2_1 = new JButton("");
 		btnNewButton_2_1.setBounds(53, 198, 36, 35);
-		btnNewButton_2_1.setIcon(new ImageIcon(Palabra.class.getResource("/Grupo5/img/Untitled.png")));
+		btnNewButton_2_1.setIcon(new ImageIcon(PalabraSecreta.class.getResource("/Grupo5/img/Untitled.png")));
 		contentPane.add(btnNewButton_2_1);
+		btnNewButton_2_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				btnNewButton_2_1.setVisible(false);
+				LabelPSecreta.setText(String.valueOf(letras_palabra));
+				if (!letras_palabra.contains('_')) {
+					btnNext.setVisible(true);
+				}
+			}
+		});
 
-		JButton btnNewButton_2_2 = new JButton("");
+		final JButton btnNewButton_2_2 = new JButton("");
 		btnNewButton_2_2.setBounds(99, 198, 36, 35);
-		btnNewButton_2_2.setIcon(new ImageIcon(Palabra.class.getResource("/Grupo5/img/Untitled.png")));
+		btnNewButton_2_2.setIcon(new ImageIcon(PalabraSecreta.class.getResource("/Grupo5/img/Untitled.png")));
 		contentPane.add(btnNewButton_2_2);
+		btnNewButton_2_2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				btnNewButton_2_2.setVisible(false);
+				LabelPSecreta.setText(String.valueOf(letras_palabra));
+				if (!letras_palabra.contains('_')) {
+					btnNext.setVisible(true);
+				}
+			}
+		});
 
-		JButton btnNewButton_2_3 = new JButton("");
+		final JButton btnNewButton_2_3 = new JButton("");
 		btnNewButton_2_3.setBounds(145, 198, 36, 35);
-		btnNewButton_2_3.setIcon(new ImageIcon(Palabra.class.getResource("/Grupo5/img/Untitled.png")));
+		btnNewButton_2_3.setIcon(new ImageIcon(PalabraSecreta.class.getResource("/Grupo5/img/Untitled.png")));
 		contentPane.add(btnNewButton_2_3);
+		btnNewButton_2_3.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				btnNewButton_2_3.setVisible(false);
+				LabelPSecreta.setText(String.valueOf(letras_palabra));
+				if (!letras_palabra.contains('_')) {
+					btnNext.setVisible(true);
+				}
+			}
+		});
 
-		JButton btnNewButton_2_4 = new JButton("");
+		final JButton btnNewButton_2_4 = new JButton("");
 		btnNewButton_2_4.setBounds(191, 198, 36, 35);
-		btnNewButton_2_4.setIcon(new ImageIcon(Palabra.class.getResource("/Grupo5/img/Untitled.png")));
+		btnNewButton_2_4.setIcon(new ImageIcon(PalabraSecreta.class.getResource("/Grupo5/img/Untitled.png")));
 		contentPane.add(btnNewButton_2_4);
+		btnNewButton_2_4.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				btnNewButton_2_4.setVisible(false);
+				LabelPSecreta.setText(String.valueOf(letras_palabra));
+				if (!letras_palabra.contains('_')) {
+					btnNext.setVisible(true);
+				}
+			}
+		});
 
+		
+		
 		LabelContador = new JLabel("");
 		LabelContador.setBounds(191, 264, 22, 14);
 		contentPane.add(LabelContador);
@@ -146,22 +193,17 @@ public class Palabra extends JFrame {
 		btnNext.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				btnNext.setVisible(false);
-				System.out.println("siguiente palabra clicked! despues de setVisible");
 				habilitarODeshabilitar(true);
-				System.out.println("siguiente palabra clicked! despues de habilitarODeshabilitar");
 				agregarListenersBotones();
-				System.out.println("siguiente palabra clicked! despues de agregarListenersBotones");
 				contador_2++;
 				añadir(palabrasSecretas());
-				System.out.println("siguiente palabra clicked! despues de añadir");
 				inicializarArray();
-				System.out.println("siguiente palabra clicked! despues de inicializarArray");
 				contador();
-				System.out.println("siguiente palabra clicked! despues de contador");
+	
 
 			}
 		});
-		btnNext.setBounds(116, 515, 149, 23);
+		btnNext.setBounds(134, 515, 149, 23);
 		contentPane.add(btnNext);
 
 		// al pulsar el botón de inicio, habilitamos los botones
@@ -241,9 +283,6 @@ public class Palabra extends JFrame {
 		    for (int i = 0; i < nNumeros ; i++) {
 		      pos = (int) Math.floor(Math.random() * nNumeros );
 		      while (sinRepetir.contains(pos)) {
-		    	  System.out.println("No sale de este while " + i);
-		    	  System.out.println("Valor pos " + pos);
-		    	  System.out.println("sinRepetir " + sinRepetir);
 		        pos = (int) Math.floor(Math.random() * nNumeros );
 		      }
 		      sinRepetir.push(pos);
@@ -265,6 +304,7 @@ public class Palabra extends JFrame {
 
 			System.out.print(letras_palabra.get(i));
 		}
+		System.out.println("\n");
 	}
 
 	public void inicializarArray() {
@@ -294,10 +334,10 @@ public class Palabra extends JFrame {
 		for (int i = 0; i < letras_palabra.size(); i++) {
 
 			if (letras_palabra.get(i) == indexBtn.getName().charAt(0)) {
-				System.out.println("QUE ES GETNAME " + indexBtn.getName());
+				//System.out.println("QUE ES GETNAME " + indexBtn.getName());
 				letras_panel.set(i, indexBtn.getName().charAt(0));
 			}
-			System.out.println("LETRAS PANEL" + letras_panel);
+			//System.out.println("LETRAS PANEL" + letras_panel);
 		}
 
 		LabelPSecreta.setText(String.valueOf(letras_panel));
