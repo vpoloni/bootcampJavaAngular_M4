@@ -133,10 +133,11 @@ public class Start extends JFrame implements ActionListener {
 		}
 
 		if (e.getSource() == principiante) {
-			Palabra palabra = new Palabra();
+			 Palabra palabra = new Palabra();
 			palabra.habilitarODeshabilitar(false);
 			palabra.agregarListenersBotones();
 			palabra.añadir(palabra.palabrasSecretas());
+			palabra.contador();
 			setVisible(false);
 
 		}
@@ -152,5 +153,4 @@ public class Start extends JFrame implements ActionListener {
 		}
 
 	}
-
 }
