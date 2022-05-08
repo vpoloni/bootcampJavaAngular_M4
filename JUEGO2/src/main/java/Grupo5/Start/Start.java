@@ -145,6 +145,7 @@ public  class Start extends JFrame implements ActionListener {
 				palabra.habilitarODeshabilitar(false);
 				palabra.agregarListenersBotones();
 				palabra.añadir(palabra.palabrasSecretas());
+				palabra.contador();
 				setVisible(false);
 				
 			   }
