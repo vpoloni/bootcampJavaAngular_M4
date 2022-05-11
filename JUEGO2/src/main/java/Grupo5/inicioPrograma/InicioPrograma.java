@@ -137,7 +137,7 @@ public class InicioPrograma extends JFrame implements ActionListener {
 			palabra.habilitarODeshabilitar(false);
 			palabra.agregarListenersBotones();
 			palabra.añadir(palabra.palabrasSecretas());
-			palabra.contador();
+			palabra.contador(); // Llamamos al metodo contador para que descuente una unidad
 			setVisible(false);
 
 		}

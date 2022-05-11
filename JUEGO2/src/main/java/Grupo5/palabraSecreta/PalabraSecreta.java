@@ -36,9 +36,10 @@ public class PalabraSecreta extends JFrame {
 	// arrayList para agrupar los botones
 	private ArrayList<JButton> botonesTeclado = new ArrayList<JButton>();
 
-	// private ArrayList<JLabel> letras_panel = new ArrayList<JLabel>();
+	// Array relleno de guiones bajos que se visualizara en la vista
 	private ArrayList<Character> letras_panel = new ArrayList<Character>();
 
+	// Array relleno de las letras de la palabra secreta
 	private ArrayList<Character> letras_palabra = new ArrayList<Character>();
 
 	// Array de numeros aleatorios no repetidos
@@ -121,14 +122,17 @@ public class PalabraSecreta extends JFrame {
 
 		}
 
+		// Labels descriptivos de la vista Teclado 
 		JLabel lblNewLabel_2 = new JLabel("Teclado");
 		lblNewLabel_2.setBounds(10, 322, 46, 14);
 		contentPane.add(lblNewLabel_2);
 
+		// Labels descriptivos de la vista Menu
 		JLabel lblNewLabel_3 = new JLabel("Menu");
 		lblNewLabel_3.setBounds(10, 25, 46, 14);
 		contentPane.add(lblNewLabel_3);
 
+		// Labels descriptivos de la vista palabra secreta
 		JLabel lblNewLabel_4 = new JLabel("Palabra secreta");
 		lblNewLabel_4.setBounds(10, 264, 96, 14);
 		contentPane.add(lblNewLabel_4);
@@ -188,73 +192,77 @@ public class PalabraSecreta extends JFrame {
 		labelimage.setBounds(10, 264, 96, 14);
 		contentPane.add(labelimage);
 		labelimage.setVisible(false);
-
+		
+		// Primer boton de ayuda. Cuando le das te completa la palabra
 		final JButton btnNewButton_2 = new JButton("");
 		btnNewButton_2.setBounds(10, 198, 36, 35);
 		btnNewButton_2.setIcon(new ImageIcon(PalabraSecreta.class.getResource("/Grupo5/img/Untitled.png")));
 		contentPane.add(btnNewButton_2);
-
 		btnNewButton_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				btnNewButton_2.setVisible(false);
-				LabelPSecreta.setText(String.valueOf(letras_palabra));
-				if (!letras_palabra.contains('_')) {
+				btnNewButton_2.setVisible(false); // Se hace invisible al apretarlo
+				LabelPSecreta.setText(String.valueOf(letras_palabra)); //Insertamos la palabra completa
+				if (!letras_palabra.contains('_')) { // Habilitamos el boton de palabra siguiente
 					btnNext.setVisible(true);
 				}
 			}
 		});
-
+		
+		// Segundo boton de ayuda. Cuando le das te completa la palabra
 		final JButton btnNewButton_2_1 = new JButton("");
 		btnNewButton_2_1.setBounds(53, 198, 36, 35);
 		btnNewButton_2_1.setIcon(new ImageIcon(PalabraSecreta.class.getResource("/Grupo5/img/Untitled.png")));
 		contentPane.add(btnNewButton_2_1);
 		btnNewButton_2_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				btnNewButton_2_1.setVisible(false);
-				LabelPSecreta.setText(String.valueOf(letras_palabra));
-				if (!letras_palabra.contains('_')) {
+				btnNewButton_2_1.setVisible(false); // Se hace invisible al apretarlo
+				LabelPSecreta.setText(String.valueOf(letras_palabra)); //Insertamos la palabra completa
+				if (!letras_palabra.contains('_')) { // Habilitamos el boton de palabra siguiente
 					btnNext.setVisible(true);
 				}
 			}
 		});
 
+		// Tercer boton de ayuda. Cuando le das te completa la palabra
 		final JButton btnNewButton_2_2 = new JButton("");
 		btnNewButton_2_2.setBounds(99, 198, 36, 35);
 		btnNewButton_2_2.setIcon(new ImageIcon(PalabraSecreta.class.getResource("/Grupo5/img/Untitled.png")));
 		contentPane.add(btnNewButton_2_2);
 		btnNewButton_2_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				btnNewButton_2_2.setVisible(false);
-				LabelPSecreta.setText(String.valueOf(letras_palabra));
+				btnNewButton_2_2.setVisible(false); // Se hace invisible al apretarlo
+				LabelPSecreta.setText(String.valueOf(letras_palabra)); //Insertamos la palabra completa
 				if (!letras_palabra.contains('_')) {
 					btnNext.setVisible(true);
 				}
 			}
 		});
 
+		// Cuarto boton de ayuda. Cuando le das te completa la palabra
 		final JButton btnNewButton_2_3 = new JButton("");
 		btnNewButton_2_3.setBounds(145, 198, 36, 35);
 		btnNewButton_2_3.setIcon(new ImageIcon(PalabraSecreta.class.getResource("/Grupo5/img/Untitled.png")));
 		contentPane.add(btnNewButton_2_3);
 		btnNewButton_2_3.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				btnNewButton_2_3.setVisible(false);
-				LabelPSecreta.setText(String.valueOf(letras_palabra));
+				btnNewButton_2_3.setVisible(false); // Se hace invisible al apretarlo
+				LabelPSecreta.setText(String.valueOf(letras_palabra)); //Insertamos la palabra completa
 				if (!letras_palabra.contains('_')) {
 					btnNext.setVisible(true);
 				}
 			}
 		});
 
+		// Quinto boton de ayuda. Cuando le das te completa la palabra
 		final JButton btnNewButton_2_4 = new JButton("");
 		btnNewButton_2_4.setBounds(191, 198, 36, 35);
 		btnNewButton_2_4.setIcon(new ImageIcon(PalabraSecreta.class.getResource("/Grupo5/img/Untitled.png")));
 		contentPane.add(btnNewButton_2_4);
 		btnNewButton_2_4.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				btnNewButton_2_4.setVisible(false);
-				LabelPSecreta.setText(String.valueOf(letras_palabra));
-				if (!letras_palabra.contains('_')) {
+				btnNewButton_2_4.setVisible(false); // Se hace invisible al apretarlo
+				LabelPSecreta.setText(String.valueOf(letras_palabra)); //Insertamos la palabra completa
+				if (!letras_palabra.contains('_')) { // Habilitamos el boton de palabra siguiente
 					btnNext.setVisible(true);
 				}
 			}
@@ -334,6 +342,7 @@ public class PalabraSecreta extends JFrame {
 		return false;
 	}
 
+	// Metodo para seleccionar una palabra
 	public String palabrasSecretas() {
 
 		ArrayList<String> palabras = new ArrayList<String>();
@@ -352,7 +361,7 @@ public class PalabraSecreta extends JFrame {
 
 			int pos;
 			int nNumeros = 10;
-
+			// Ponemos en el array 10 numeros aleatorios desordenados sin repetirse
 			for (int i = 0; i < nNumeros; i++) {
 				pos = (int) Math.floor(Math.random() * nNumeros);
 				while (sinRepetir.contains(pos)) {
@@ -362,11 +371,11 @@ public class PalabraSecreta extends JFrame {
 			}
 			System.out.println(sinRepetir.toString());
 		}
-
+		// seleccionamos las palabras en funcion del array anterior
 		return palabras.get(sinRepetir.get(contador_2));
 
 	}
-
+	// Añadimos en el array letras_palabra, la palabra seleccionsada caracter a caracter
 	public void añadir(String pAñadir) {
 
 		letras_palabra.clear();
@@ -379,7 +388,7 @@ public class PalabraSecreta extends JFrame {
 		}
 		System.out.println("\n");
 	}
-
+	// Ponemos el array letras_panel completo de guiones bajos en funcion de la longitud de la palabra seleccionada
 	public void inicializarArray() {
 
 		letras_panel.clear();
@@ -387,14 +396,14 @@ public class PalabraSecreta extends JFrame {
 		for (int i = 0; i < letras_palabra.size(); i++) {
 			letras_panel.add('_');
 		}
-
+		// caracteristicas de la etiqueta que mostrara la palabra secreta
 		LabelPSecreta.setBounds(20, 289, 245, 14);
 		contentPane.add(LabelPSecreta);
 
 		LabelPSecreta.setText(String.valueOf(letras_panel));
 
 	}
-
+	// Contador que nos mostrara en la vista las palabras que nos quedan por acertar
 	public void contador() {
 
 		contador--;
@@ -402,6 +411,7 @@ public class PalabraSecreta extends JFrame {
 
 	}
 
+	// insertamos las letras que vamos hacertando al apretar los botones del teclado
 	public void insertarLetras(JButton indexBtn) {
 
 		for (int i = 0; i < letras_palabra.size(); i++) {
