@@ -17,21 +17,23 @@ public class PalabraSecreta extends JFrame {
 
 	private static final long serialVersionUID = 1L;
 
+	// atributos
 	private JPanel contentPane;
-
 	private int contadorimagenes = 9;
 	private int contador = 11;
 	private int contador_2 = 0;
 	private int fallos = 0;
-
 	private JButton btnNext;
 	private JLabel LabelPSecreta = new JLabel("");
-
 	private JLabel NewLabel0, NewLabel1, NewLabel2, NewLabel3, NewLabel4, NewLabel5, NewLabel6, NewLabel7, NewLabel8,
 			NewLabel9, NewLabel10;
+	private JLabel LabelContador;
+	private JLabel lblNewLabel_6;
+	JLabel labelimage = new JLabel("");
+	
+	
+	// arrayLists
 	ArrayList<JLabel> arrayName = new ArrayList<JLabel>();
-
-	// arrayName = new ArrayList<JLabel>[9];
 
 	// arrayList para agrupar los botones
 	private ArrayList<JButton> botonesTeclado = new ArrayList<JButton>();
@@ -45,10 +47,8 @@ public class PalabraSecreta extends JFrame {
 	// Array de numeros aleatorios no repetidos
 	Stack<Integer> sinRepetir = new Stack<Integer>();
 
-	private JLabel LabelContador;
-	private JLabel lblNewLabel_6;
-	JLabel labelimage = new JLabel("");
 
+	// constructor
 	public PalabraSecreta() {
 
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -83,23 +83,12 @@ public class PalabraSecreta extends JFrame {
 			}
 		});
 
-		JLabel Label_teclado = new JLabel("Teclado");
-		Label_teclado.setBounds(0, 0, 0, 0);
-		contentPane.add(Label_teclado);
-
-		JLabel lblNewLabel = new JLabel("Menu");
-		lblNewLabel.setBounds(0, 0, 0, 0);
-		contentPane.add(lblNewLabel);
-
-		JLabel lblNewLabel_1 = new JLabel("New label");
-		lblNewLabel_1.setBounds(0, 0, 0, 0);
-		contentPane.add(lblNewLabel_1);
-
 		// creamos los botones
 		int x = 10;
 		int y = 347;
 		int contadorSaltos = 0;
 
+		
 		arrayName = new ArrayList<JLabel>(contadorimagenes);
 
 		String letras = "ABCDEFGHIJKLMNÑOPQRSTUVWXYZ";
@@ -122,7 +111,7 @@ public class PalabraSecreta extends JFrame {
 
 		}
 
-		// Labels descriptivos de la vista Teclado 
+		// Labels descriptivos de la vista Teclado
 		JLabel lblNewLabel_2 = new JLabel("Teclado");
 		lblNewLabel_2.setBounds(10, 322, 46, 14);
 		contentPane.add(lblNewLabel_2);
@@ -136,7 +125,7 @@ public class PalabraSecreta extends JFrame {
 		JLabel lblNewLabel_4 = new JLabel("Palabra secreta");
 		lblNewLabel_4.setBounds(10, 264, 96, 14);
 		contentPane.add(lblNewLabel_4);
-		
+
 		arrayName.clear();
 
 		NewLabel0 = new JLabel(new ImageIcon(PalabraSecreta.class.getResource("/Grupo5/img/0.png")));
@@ -187,12 +176,10 @@ public class PalabraSecreta extends JFrame {
 		arrayName.add(9, NewLabel9);
 		arrayName.add(10, NewLabel10);
 
-		
-
 		labelimage.setBounds(10, 264, 96, 14);
 		contentPane.add(labelimage);
 		labelimage.setVisible(false);
-		
+
 		// Primer boton de ayuda. Cuando le das te completa la palabra
 		final JButton btnNewButton_2 = new JButton("");
 		btnNewButton_2.setBounds(10, 198, 36, 35);
@@ -201,13 +188,13 @@ public class PalabraSecreta extends JFrame {
 		btnNewButton_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				btnNewButton_2.setVisible(false); // Se hace invisible al apretarlo
-				LabelPSecreta.setText(String.valueOf(letras_palabra)); //Insertamos la palabra completa
+				LabelPSecreta.setText(String.valueOf(letras_palabra)); // Insertamos la palabra completa
 				if (!letras_palabra.contains('_')) { // Habilitamos el boton de palabra siguiente
 					btnNext.setVisible(true);
 				}
 			}
 		});
-		
+
 		// Segundo boton de ayuda. Cuando le das te completa la palabra
 		final JButton btnNewButton_2_1 = new JButton("");
 		btnNewButton_2_1.setBounds(53, 198, 36, 35);
@@ -216,7 +203,7 @@ public class PalabraSecreta extends JFrame {
 		btnNewButton_2_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				btnNewButton_2_1.setVisible(false); // Se hace invisible al apretarlo
-				LabelPSecreta.setText(String.valueOf(letras_palabra)); //Insertamos la palabra completa
+				LabelPSecreta.setText(String.valueOf(letras_palabra)); // Insertamos la palabra completa
 				if (!letras_palabra.contains('_')) { // Habilitamos el boton de palabra siguiente
 					btnNext.setVisible(true);
 				}
@@ -231,7 +218,7 @@ public class PalabraSecreta extends JFrame {
 		btnNewButton_2_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				btnNewButton_2_2.setVisible(false); // Se hace invisible al apretarlo
-				LabelPSecreta.setText(String.valueOf(letras_palabra)); //Insertamos la palabra completa
+				LabelPSecreta.setText(String.valueOf(letras_palabra)); // Insertamos la palabra completa
 				if (!letras_palabra.contains('_')) {
 					btnNext.setVisible(true);
 				}
@@ -246,7 +233,7 @@ public class PalabraSecreta extends JFrame {
 		btnNewButton_2_3.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				btnNewButton_2_3.setVisible(false); // Se hace invisible al apretarlo
-				LabelPSecreta.setText(String.valueOf(letras_palabra)); //Insertamos la palabra completa
+				LabelPSecreta.setText(String.valueOf(letras_palabra)); // Insertamos la palabra completa
 				if (!letras_palabra.contains('_')) {
 					btnNext.setVisible(true);
 				}
@@ -261,7 +248,7 @@ public class PalabraSecreta extends JFrame {
 		btnNewButton_2_4.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				btnNewButton_2_4.setVisible(false); // Se hace invisible al apretarlo
-				LabelPSecreta.setText(String.valueOf(letras_palabra)); //Insertamos la palabra completa
+				LabelPSecreta.setText(String.valueOf(letras_palabra)); // Insertamos la palabra completa
 				if (!letras_palabra.contains('_')) { // Habilitamos el boton de palabra siguiente
 					btnNext.setVisible(true);
 				}
@@ -288,19 +275,16 @@ public class PalabraSecreta extends JFrame {
 				añadir(palabrasSecretas());
 				inicializarArray();
 				contador();
-				
-					
-				
 
 			}
 		});
+		
 		btnNext.setBounds(134, 515, 149, 23);
 		contentPane.add(btnNext);
 
 	}
 
-	// deshabilitamos o habilitamos los botones según la opción pasada como
-	// parámetro
+	// deshabilitamos o habilitamos los botones según la opción pasada como parámetro
 	public void habilitarODeshabilitar(boolean opcion) {
 		for (int i = 0; i < botonesTeclado.size(); i++) {
 			botonesTeclado.get(i).setEnabled(opcion);
@@ -308,8 +292,7 @@ public class PalabraSecreta extends JFrame {
 		}
 	}
 
-	// función que agrega a cada boton del array botonesTeclado el addActionListener
-	// que deshabilita el boton clickado
+	// función que agrega a cada botón del array botonesTeclado el addActionListener que deshabilita el botón clickado
 	public void agregarListenersBotones() {
 
 		for (int i = 0; i < botonesTeclado.size(); i++) {
@@ -320,23 +303,22 @@ public class PalabraSecreta extends JFrame {
 				@Override
 				public void actionPerformed(ActionEvent e) {
 					botonesTeclado.get(indxBtn).setEnabled(false);
-					
+
 					insertarLetras(botonesTeclado.get(indxBtn));
 					insertarImagen(botonesTeclado.get(indxBtn));
 				}
 			});
-		
+
 		}
 	}
 
 	public boolean verificar(JButton a) {
-		boolean igual = false;
 
 		for (int n = 0; n < letras_palabra.size(); n++) {
 
 			if (a.getText().toLowerCase().equals(letras_palabra.get(n).toString())) {
 
-				return  true;
+				return true;
 			}
 		}
 		return false;
@@ -375,6 +357,7 @@ public class PalabraSecreta extends JFrame {
 		return palabras.get(sinRepetir.get(contador_2));
 
 	}
+
 	// Añadimos en el array letras_palabra, la palabra seleccionsada caracter a caracter
 	public void añadir(String pAñadir) {
 
@@ -388,6 +371,7 @@ public class PalabraSecreta extends JFrame {
 		}
 		System.out.println("\n");
 	}
+
 	// Ponemos el array letras_panel completo de guiones bajos en funcion de la longitud de la palabra seleccionada
 	public void inicializarArray() {
 
@@ -403,6 +387,7 @@ public class PalabraSecreta extends JFrame {
 		LabelPSecreta.setText(String.valueOf(letras_panel));
 
 	}
+
 	// Contador que nos mostrara en la vista las palabras que nos quedan por acertar
 	public void contador() {
 
@@ -417,10 +402,9 @@ public class PalabraSecreta extends JFrame {
 		for (int i = 0; i < letras_palabra.size(); i++) {
 
 			if (letras_palabra.get(i) == indexBtn.getName().charAt(0)) {
-				// System.out.println("QUE ES GETNAME " + indexBtn.getName());
+			
 				letras_panel.set(i, indexBtn.getName().charAt(0));
 			}
-			// System.out.println("LETRAS PANEL" + letras_panel);
 		}
 
 		LabelPSecreta.setText(String.valueOf(letras_panel));
@@ -437,21 +421,20 @@ public class PalabraSecreta extends JFrame {
 			fallos++;
 			labelimage = arrayName.get(fallos);
 			labelimage.setBounds(300, 25, 250, 320);
-			
+
 			contentPane.add(labelimage);
-			if(fallos != 0) {
-				arrayName.get(fallos-1).setVisible(false);	
+			if (fallos != 0) {
+				arrayName.get(fallos - 1).setVisible(false);
 			}
-			arrayName.get(fallos).setVisible(true);	
+			arrayName.get(fallos).setVisible(true);
 
 		}
-		if (fallos == arrayName.size()-1) {
+		if (fallos == arrayName.size() - 1) {
 			JOptionPane.showMessageDialog(null, "HAS PERDIDO! XD");
 			btnNext.setVisible(true);
-			fallos=0;
-			
+			fallos = 0;
+
 		}
-	
 
 	}
 

@@ -133,7 +133,7 @@ public class InicioPrograma extends JFrame implements ActionListener {
 		}
 
 		if (e.getSource() == principiante) {
-			 PalabraSecreta palabra = new PalabraSecreta();
+			PalabraSecreta palabra = new PalabraSecreta();
 			palabra.habilitarODeshabilitar(false);
 			palabra.agregarListenersBotones();
 			palabra.añadir(palabra.palabrasSecretas());
