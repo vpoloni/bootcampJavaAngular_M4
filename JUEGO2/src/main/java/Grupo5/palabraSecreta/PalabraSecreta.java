@@ -18,20 +18,21 @@ public class PalabraSecreta extends JFrame {
 	private static final long serialVersionUID = 1L;
 
 	private JPanel contentPane;
-
-	private int contadorimagenes = 9;
+    //imagenes ahorcado
+	private int contadorimagenes = 10;
 	private int contador = 11;
 	private int contador_2 = 0;
-	private int fallos = 0;
+	//contador de fallos;
+	private int fallos = 1;
 
 	private JButton btnNext;
 	private JLabel LabelPSecreta = new JLabel("");
-
+    //label de las imagenes 
 	private JLabel NewLabel0, NewLabel1, NewLabel2, NewLabel3, NewLabel4, NewLabel5, NewLabel6, NewLabel7, NewLabel8,
 			NewLabel9, NewLabel10;
+	//array donde ponemos las imagenes
 	ArrayList<JLabel> arrayName = new ArrayList<JLabel>();
 
-	// arrayName = new ArrayList<JLabel>[9];
 
 	// arrayList para agrupar los botones
 	private ArrayList<JButton> botonesTeclado = new ArrayList<JButton>();
@@ -72,12 +73,16 @@ public class PalabraSecreta extends JFrame {
 			}
 
 		});
-
+        //boton resolver palabra
 		JButton Button_Resolver = new JButton("Resolver");
 		Button_Resolver.setBounds(50, 100, 200, 50);
 		contentPane.add(Button_Resolver);
 		Button_Resolver.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				LabelPSecreta.setText(String.valueOf(letras_palabra));
+				if (!letras_palabra.contains('_')) {
+					btnNext.setVisible(true);
+				}
 
 			}
 		});
@@ -98,7 +103,8 @@ public class PalabraSecreta extends JFrame {
 		int x = 10;
 		int y = 347;
 		int contadorSaltos = 0;
-
+        
+		//array imagenes con tamaño contadorimagenes
 		arrayName = new ArrayList<JLabel>(contadorimagenes);
 
 		String letras = "ABCDEFGHIJKLMNÑOPQRSTUVWXYZ";
@@ -135,6 +141,7 @@ public class PalabraSecreta extends JFrame {
 		
 		arrayName.clear();
 
+		//añadimos las imagenes
 		NewLabel0 = new JLabel(new ImageIcon(PalabraSecreta.class.getResource("/Grupo5/img/0.png")));
 		NewLabel1 = new JLabel(new ImageIcon(PalabraSecreta.class.getResource("/Grupo5/img/1.png")));
 		NewLabel2 = new JLabel(new ImageIcon(PalabraSecreta.class.getResource("/Grupo5/img/2.png")));
@@ -147,6 +154,7 @@ public class PalabraSecreta extends JFrame {
 		NewLabel9 = new JLabel(new ImageIcon(PalabraSecreta.class.getResource("/Grupo5/img/9.png")));
 		NewLabel10 = new JLabel(new ImageIcon(PalabraSecreta.class.getResource("/Grupo5/img/10.png")));
 
+		//les damos forma dentro el panel
 		NewLabel0.setBounds(304, 11, 362, 546);
 		NewLabel1.setBounds(304, 11, 362, 546);
 		NewLabel2.setBounds(304, 11, 362, 546);
@@ -160,6 +168,7 @@ public class PalabraSecreta extends JFrame {
 		NewLabel10.setBounds(304, 11, 362, 546);
 
 		contentPane.add(NewLabel0);
+		NewLabel0.setVisible(true);
 		contentPane.add(NewLabel1);
 		contentPane.add(NewLabel2);
 		contentPane.add(NewLabel3);
@@ -185,10 +194,8 @@ public class PalabraSecreta extends JFrame {
 
 		
 
-		labelimage.setBounds(10, 264, 96, 14);
-		contentPane.add(labelimage);
-		labelimage.setVisible(false);
 
+		//inciamos boton y le ponemos la imagen de la bombilla
 		final JButton btnNewButton_2 = new JButton("");
 		btnNewButton_2.setBounds(10, 198, 36, 35);
 		btnNewButton_2.setIcon(new ImageIcon(PalabraSecreta.class.getResource("/Grupo5/img/Untitled.png")));
@@ -208,6 +215,7 @@ public class PalabraSecreta extends JFrame {
 		btnNewButton_2_1.setBounds(53, 198, 36, 35);
 		btnNewButton_2_1.setIcon(new ImageIcon(PalabraSecreta.class.getResource("/Grupo5/img/Untitled.png")));
 		contentPane.add(btnNewButton_2_1);
+		
 		btnNewButton_2_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				btnNewButton_2_1.setVisible(false);
@@ -222,6 +230,7 @@ public class PalabraSecreta extends JFrame {
 		btnNewButton_2_2.setBounds(99, 198, 36, 35);
 		btnNewButton_2_2.setIcon(new ImageIcon(PalabraSecreta.class.getResource("/Grupo5/img/Untitled.png")));
 		contentPane.add(btnNewButton_2_2);
+		
 		btnNewButton_2_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				btnNewButton_2_2.setVisible(false);
@@ -236,6 +245,7 @@ public class PalabraSecreta extends JFrame {
 		btnNewButton_2_3.setBounds(145, 198, 36, 35);
 		btnNewButton_2_3.setIcon(new ImageIcon(PalabraSecreta.class.getResource("/Grupo5/img/Untitled.png")));
 		contentPane.add(btnNewButton_2_3);
+		
 		btnNewButton_2_3.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				btnNewButton_2_3.setVisible(false);
@@ -250,6 +260,7 @@ public class PalabraSecreta extends JFrame {
 		btnNewButton_2_4.setBounds(191, 198, 36, 35);
 		btnNewButton_2_4.setIcon(new ImageIcon(PalabraSecreta.class.getResource("/Grupo5/img/Untitled.png")));
 		contentPane.add(btnNewButton_2_4);
+		
 		btnNewButton_2_4.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				btnNewButton_2_4.setVisible(false);
@@ -267,15 +278,18 @@ public class PalabraSecreta extends JFrame {
 		lblNewLabel_6 = new JLabel("Palabras");
 		lblNewLabel_6.setBounds(216, 264, 52, 14);
 		contentPane.add(lblNewLabel_6);
-
+        
+		//empieza la siguiente palabra
 		btnNext = new JButton("Sig. Palabra");
 		btnNext.setVisible(false);
 		btnNext.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				fallos = 1;
+				
 				reiniciarimagenes();
 				btnNext.setVisible(false);
 				habilitarODeshabilitar(true);
-				agregarListenersBotones();
+			//	agregarListenersBotones();
 				contador_2++;
 				añadir(palabrasSecretas());
 				inicializarArray();
@@ -320,9 +334,9 @@ public class PalabraSecreta extends JFrame {
 		
 		}
 	}
-
+// verificamos si la la letra del boton apretado es igual a alguna letra de la palabaa secreta
 	public boolean verificar(JButton a) {
-		boolean igual = false;
+		
 
 		for (int n = 0; n < letras_palabra.size(); n++) {
 
@@ -335,7 +349,7 @@ public class PalabraSecreta extends JFrame {
 	}
 
 	public String palabrasSecretas() {
-
+         //array de palabras secretas (el juego consta de 10 palabras hasta que finaliza)
 		ArrayList<String> palabras = new ArrayList<String>();
 		palabras.add("murcielago");
 		palabras.add("television");
@@ -366,7 +380,7 @@ public class PalabraSecreta extends JFrame {
 		return palabras.get(sinRepetir.get(contador_2));
 
 	}
-
+    //añadimos si encuentra la letra al slot vacio de la palabra secreta
 	public void añadir(String pAñadir) {
 
 		letras_palabra.clear();
@@ -379,7 +393,7 @@ public class PalabraSecreta extends JFrame {
 		}
 		System.out.println("\n");
 	}
-
+    //ponermos barra baja  y setamos valores
 	public void inicializarArray() {
 
 		letras_panel.clear();
@@ -401,7 +415,7 @@ public class PalabraSecreta extends JFrame {
 		LabelContador.setText(String.valueOf(contador));
 
 	}
-
+    
 	public void insertarLetras(JButton indexBtn) {
 
 		for (int i = 0; i < letras_palabra.size(); i++) {
@@ -420,31 +434,32 @@ public class PalabraSecreta extends JFrame {
 		}
 	}
 
+	//metodo qe inserta imagen cuando hay fallo
 	public void insertarImagen(JButton indexBtn) {
 
 //TODO:resetear var fallo cuando llege a 10 adivine la palabra
 		if (!verificar(indexBtn)) {
-			fallos++;
 			labelimage = arrayName.get(fallos);
-			labelimage.setBounds(300, 25, 250, 320);
-			
+			labelimage.setBounds(304, 11, 362, 546);
 			contentPane.add(labelimage);
-			if(fallos != 0) {
-				arrayName.get(fallos-1).setVisible(false);	
+		
+			if(fallos > 0) {
+				arrayName.get(fallos-1).setVisible(false);
+				System.out.println(fallos);
 			}
 			arrayName.get(fallos).setVisible(true);	
-
+       	fallos++;
 		}
-		if (fallos == arrayName.size()-1) {
+		if (fallos == arrayName.size()) {
 			JOptionPane.showMessageDialog(null, "HAS PERDIDO! XD");
 			btnNext.setVisible(true);
 			fallos=0;
 			
 		}
 	
-
 	}
 
+	//metodo qe reincia imagenes cuando se han enctroado o no la palabra secreta
 	public void reiniciarimagenes() {
 		for (int i = 0; i < arrayName.size(); i++) {
 			if (i == 0) {
@@ -453,4 +468,5 @@ public class PalabraSecreta extends JFrame {
 			arrayName.get(i).setVisible(false);
 		}
 	}
+	
 }

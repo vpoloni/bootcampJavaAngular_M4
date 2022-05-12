@@ -19,9 +19,13 @@ public class InicioPrograma extends JFrame implements ActionListener {
 
 	private static final long serialVersionUID = 1L;
 
+	//panel inicio
 	private JPanel contentPane;
+	//panel de boton ayuda
 	private JPanel contentPaneAyuda;
+	//panel de dificultad
 	private JPanel contentPaneDificultad;
+	//panel de acerca de o sobre el juego
 	private JPanel contentAcercaDe;
 	private JLabel Newlabel1;
 	private JLabel Newlabel2;
@@ -34,6 +38,8 @@ public class InicioPrograma extends JFrame implements ActionListener {
 	final JButton boton4;
 	final JButton boton5;
 	final JButton boton6;
+	
+	//Botones con niveles de dificultad
 	final JButton principiante;
 	final JButton intermedio;
 	final JButton experto;
@@ -94,13 +100,15 @@ public class InicioPrograma extends JFrame implements ActionListener {
 		Border border1 = BorderFactory.createTitledBorder("AYUDA");
 		contentPaneAyuda.setBorder(border1);
 		contentPaneAyuda.add(boton4);
-
+		
+        //imagen de instrucciones
 		imgThisImg = new ImageIcon("C:\\Users\\newga\\Desktop\\Instrucciones.PNG");
 		Newlabel1.setIcon(imgThisImg);
 		contentPaneAyuda.add(Newlabel1);
 
 		contentAcercaDe = new JPanel();
 
+		//borde del titulo del panel
 		Border border2 = BorderFactory.createTitledBorder("ACERCA DE");
 		contentAcercaDe.setBorder(border2);
 		Newlabel3 = new JLabel("Data: 05/05/2022");
@@ -111,6 +119,7 @@ public class InicioPrograma extends JFrame implements ActionListener {
 		contentAcercaDe.add(boton6);
 	}
 
+	//aqui suceden todos los eventos de botones
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		if (e.getSource() == boton1) {
@@ -126,13 +135,14 @@ public class InicioPrograma extends JFrame implements ActionListener {
 			setContentPane(contentAcercaDe);
 			setVisible(true);
 
-		}
+		} //escogemos dificultad 
 		if (e.getSource() == boton4 || e.getSource() == boton5 || e.getSource() == boton6) {
 			setContentPane(contentPane);
 			setVisible(true);
 		}
 
 		if (e.getSource() == principiante) {
+			//iniciamos clase palabra secreta es nivel principiante
 			 PalabraSecreta palabra = new PalabraSecreta();
 			palabra.habilitarODeshabilitar(false);
 			palabra.agregarListenersBotones();
