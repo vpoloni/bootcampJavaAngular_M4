@@ -142,12 +142,10 @@ public class InicioPrograma extends JFrame implements ActionListener {
 		}
 
 		if (e.getSource() == principiante) {
-<<<<<<< HEAD
+
 			//iniciamos clase palabra secreta es nivel principiante
 			 PalabraSecreta palabra = new PalabraSecreta();
-=======
-			PalabraSecreta palabra = new PalabraSecreta();
->>>>>>> branch 'refactorApp1' of https://github.com/MarcNebot1/JUEGO2.git
+
 			palabra.habilitarODeshabilitar(false);
 			palabra.agregarListenersBotones();
 			palabra.añadir(palabra.palabrasSecretas());

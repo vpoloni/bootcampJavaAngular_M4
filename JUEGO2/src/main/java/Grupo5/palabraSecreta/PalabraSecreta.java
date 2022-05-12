@@ -19,45 +19,40 @@ public class PalabraSecreta extends JFrame {
 
 	// atributos
 	private JPanel contentPane;
-<<<<<<< HEAD
+
     //imagenes ahorcado
 	private int contadorimagenes = 10;
-=======
-	private int contadorimagenes = 9;
->>>>>>> branch 'refactorApp1' of https://github.com/MarcNebot1/JUEGO2.git
+
+
 	private int contador = 11;
 	private int contador_2 = 0;
-<<<<<<< HEAD
+
 	//contador de fallos;
 	private int fallos = 1;
 
-=======
-	private int fallos = 0;
->>>>>>> branch 'refactorApp1' of https://github.com/MarcNebot1/JUEGO2.git
 	private JButton btnNext;
 	private JLabel LabelPSecreta = new JLabel("");
-<<<<<<< HEAD
+
     //label de las imagenes 
-=======
->>>>>>> branch 'refactorApp1' of https://github.com/MarcNebot1/JUEGO2.git
+
+
 	private JLabel NewLabel0, NewLabel1, NewLabel2, NewLabel3, NewLabel4, NewLabel5, NewLabel6, NewLabel7, NewLabel8,
 			NewLabel9, NewLabel10;
-<<<<<<< HEAD
+
 	//array donde ponemos las imagenes
-=======
+
 	private JLabel LabelContador;
 	private JLabel lblNewLabel_6;
 	JLabel labelimage = new JLabel("");
 	
 	
 	// arrayLists
->>>>>>> branch 'refactorApp1' of https://github.com/MarcNebot1/JUEGO2.git
 	ArrayList<JLabel> arrayName = new ArrayList<JLabel>();
 
-<<<<<<< HEAD
 
-=======
->>>>>>> branch 'refactorApp1' of https://github.com/MarcNebot1/JUEGO2.git
+
+
+
 	// arrayList para agrupar los botones
 	private ArrayList<JButton> botonesTeclado = new ArrayList<JButton>();
 
@@ -114,13 +109,9 @@ public class PalabraSecreta extends JFrame {
 		int x = 10;
 		int y = 347;
 		int contadorSaltos = 0;
-<<<<<<< HEAD
+
         
 		//array imagenes con tamaño contadorimagenes
-=======
-
-		
->>>>>>> branch 'refactorApp1' of https://github.com/MarcNebot1/JUEGO2.git
 		arrayName = new ArrayList<JLabel>(contadorimagenes);
 
 		String letras = "ABCDEFGHIJKLMNÑOPQRSTUVWXYZ";
@@ -211,20 +202,16 @@ public class PalabraSecreta extends JFrame {
 		arrayName.add(9, NewLabel9);
 		arrayName.add(10, NewLabel10);
 
-<<<<<<< HEAD
-		
 
-=======
 		labelimage.setBounds(10, 264, 96, 14);
 		contentPane.add(labelimage);
 		labelimage.setVisible(false);
->>>>>>> branch 'refactorApp1' of https://github.com/MarcNebot1/JUEGO2.git
 
-<<<<<<< HEAD
-		//inciamos boton y le ponemos la imagen de la bombilla
-=======
+
+
+		
+
 		// Primer boton de ayuda. Cuando le das te completa la palabra
->>>>>>> branch 'refactorApp1' of https://github.com/MarcNebot1/JUEGO2.git
 		final JButton btnNewButton_2 = new JButton("");
 		btnNewButton_2.setBounds(10, 198, 36, 35);
 		btnNewButton_2.setIcon(new ImageIcon(PalabraSecreta.class.getResource("/Grupo5/img/Untitled.png")));
@@ -364,10 +351,6 @@ public class PalabraSecreta extends JFrame {
 	}
 // verificamos si la la letra del boton apretado es igual a alguna letra de la palabaa secreta
 	public boolean verificar(JButton a) {
-<<<<<<< HEAD
-		
-=======
->>>>>>> branch 'refactorApp1' of https://github.com/MarcNebot1/JUEGO2.git
 
 		for (int n = 0; n < letras_palabra.size(); n++) {
 
@@ -412,12 +395,9 @@ public class PalabraSecreta extends JFrame {
 		return palabras.get(sinRepetir.get(contador_2));
 
 	}
-<<<<<<< HEAD
-    //añadimos si encuentra la letra al slot vacio de la palabra secreta
-=======
+
 
 	// Añadimos en el array letras_palabra, la palabra seleccionsada caracter a caracter
->>>>>>> branch 'refactorApp1' of https://github.com/MarcNebot1/JUEGO2.git
 	public void añadir(String pAñadir) {
 
 		letras_palabra.clear();
@@ -430,12 +410,8 @@ public class PalabraSecreta extends JFrame {
 		}
 		System.out.println("\n");
 	}
-<<<<<<< HEAD
-    //ponermos barra baja  y setamos valores
-=======
 
 	// Ponemos el array letras_panel completo de guiones bajos en funcion de la longitud de la palabra seleccionada
->>>>>>> branch 'refactorApp1' of https://github.com/MarcNebot1/JUEGO2.git
 	public void inicializarArray() {
 
 		letras_panel.clear();
@@ -458,12 +434,9 @@ public class PalabraSecreta extends JFrame {
 		LabelContador.setText(String.valueOf(contador));
 
 	}
-<<<<<<< HEAD
-    
-=======
+
 
 	// insertamos las letras que vamos hacertando al apretar los botones del teclado
->>>>>>> branch 'refactorApp1' of https://github.com/MarcNebot1/JUEGO2.git
 	public void insertarLetras(JButton indexBtn) {
 
 		for (int i = 0; i < letras_palabra.size(); i++) {
@@ -484,49 +457,32 @@ public class PalabraSecreta extends JFrame {
 	//metodo qe inserta imagen cuando hay fallo
 	public void insertarImagen(JButton indexBtn) {
 
-//TODO:resetear var fallo cuando llege a 10 adivine la palabra
+
 		if (!verificar(indexBtn)) {
 			labelimage = arrayName.get(fallos);
-<<<<<<< HEAD
-			labelimage.setBounds(304, 11, 362, 546);
-=======
-			labelimage.setBounds(300, 25, 250, 320);
 
->>>>>>> branch 'refactorApp1' of https://github.com/MarcNebot1/JUEGO2.git
+			labelimage.setBounds(304, 11, 362, 546);
+
 			contentPane.add(labelimage);
-<<<<<<< HEAD
-		
 			if(fallos > 0) {
 				arrayName.get(fallos-1).setVisible(false);
 				System.out.println(fallos);
-=======
-			if (fallos != 0) {
-				arrayName.get(fallos - 1).setVisible(false);
->>>>>>> branch 'refactorApp1' of https://github.com/MarcNebot1/JUEGO2.git
-			}
-<<<<<<< HEAD
+
+	}
 			arrayName.get(fallos).setVisible(true);	
        	fallos++;
-=======
-			arrayName.get(fallos).setVisible(true);
-
->>>>>>> branch 'refactorApp1' of https://github.com/MarcNebot1/JUEGO2.git
 		}
-<<<<<<< HEAD
+
 		if (fallos == arrayName.size()) {
-=======
-		if (fallos == arrayName.size() - 1) {
->>>>>>> branch 'refactorApp1' of https://github.com/MarcNebot1/JUEGO2.git
+
+		
+
 			JOptionPane.showMessageDialog(null, "HAS PERDIDO! XD");
 			btnNext.setVisible(true);
 			fallos = 0;
 
 		}
-<<<<<<< HEAD
-	
-=======
 
->>>>>>> branch 'refactorApp1' of https://github.com/MarcNebot1/JUEGO2.git
 	}
 
 	//metodo qe reincia imagenes cuando se han enctroado o no la palabra secreta
